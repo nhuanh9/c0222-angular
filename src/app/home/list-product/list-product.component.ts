@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {StudentService} from "../../service/student.service";
 
 @Component({
   selector: 'app-list-product',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-product.component.css']
 })
 export class ListProductComponent implements OnInit {
-
-  constructor() { }
+  list: any;
+  constructor(private httpClient: HttpClient,
+              private studentService: StudentService) { }
 
   ngOnInit(): void {
+    this.studentService.findAll().subscribe((data)=> {
+      console.log(data);
+      this.list = data;
+    }, error => {
+
+    })
   }
 
 }

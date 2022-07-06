@@ -1,1 +1,12 @@
 <p>create-product works!</p>
+<form [formGroup]="form" (submit)="add()">
+  <input type="text" formControlName = "name">
+  <input type="text" formControlName = "age">
+  <input type="text" formControlName = "score">
+  <select formControlName = "clazzId">
+    <option *ngFor="let clazz of listClazz" [value]="clazz.id">
+      {{clazz.name}}
+    </option>
+  </select>
+  <button>Tạo</button>
+</form>

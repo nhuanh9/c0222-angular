@@ -8,6 +8,8 @@ import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home/home.component';
 import { ListProductComponent } from './home/list-product/list-product.component';
 import { CreateProductComponent } from './home/create-product/create-product.component';
+import {HttpClientModule} from "@angular/common/http";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { CreateProductComponent } from './home/create-product/create-product.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
