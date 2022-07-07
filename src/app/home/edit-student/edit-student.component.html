@@ -1,0 +1,13 @@
+<p>edit-product works!</p>
+<form [formGroup]="form" (submit)="save()">
+  <input type="hidden" formControlName = "id">
+  <input type="text" formControlName = "name">
+  <input type="text" formControlName = "age">
+  <input type="text" formControlName = "score">
+  <select formControlGroup = "clazz">
+    <option *ngFor="let clazz of listClazz" [value]="clazz.id">
+      {{clazz.name}}
+    </option>
+  </select>
+  <button>Tạo</button>
+</form>
